@@ -1,0 +1,182 @@
+$x: 2;
+:root {
+  --mainColor: #161a27;
+  --secondColor: #2b3252;
+  --therdColor: #d5e3ff;
+  --forthColor: #ff9334;
+  --white: #fff;
+}
+// selection,scrollbar
+::selection {
+  background-color: var(--white);
+  color: var(--white);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--white);
+}
+.light {
+  --mainColor: #856542;
+  --secondColor: #4e3b28;
+  --therdColor: #ffeed5;
+}
+body {
+  transition: 1s;
+  min-height: 100vh;
+  background-color: var(--mainColor);
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+#main {
+  .dash1,
+  .dash2,
+  .dash3 {
+    grid-column: span 3;
+    width: 100%;
+    min-height: 75px;
+    text-align: center;
+    background-color: var(--therdColor);
+    color: var(--secondColor);
+    font-weight: bold;
+    outline: none;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h3,
+    h2 {
+      margin: 0;
+    }
+    h3 {
+      font-size: 1.4rem;
+      span {
+        color: var(--forthColor);
+      }
+      @media (max-width: 450px) {
+        font-size: 1.2rem;
+      }
+      @media (max-width: 410px) {
+        font-size: 1rem;
+      }
+      @media (max-width: 279px) {
+        font-size: 0.8rem;
+      }
+    }
+    span {
+      color: var(--secondColor);
+      font-size: 1.5rem;
+      @media (max-width: 450px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .dash3 {
+    @media (max-width: 450px) {
+      padding: 10px;
+    }
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    p {
+      cursor: pointer;
+      margin: 2px 0;
+      height: auto;
+      padding: 5px 10px;
+      font-size: 1rem;
+      background-color: var(--mainColor);
+      color: var(--therdColor);
+      border: 2px solid var(--mainColor);
+      transition: 0.5s;
+      &:hover {
+        background-color: var(--therdColor);
+        color: var(--mainColor);
+        border: 2px solid var(--mainColor);
+      }
+    }
+  }
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  background: var(--secondColor);
+  padding: 15px;
+  @media (max-width: 470px) {
+    grid-template-columns: repeat(3, 120px);
+  }
+  @media (max-width: 410px) {
+    grid-template-columns: repeat(3, 80px);
+  }
+  @media (max-width: 279px) {
+    grid-template-columns: repeat(3, 50px);
+  }
+  .winner {
+    background-color: var(--mainColor);
+    color: var(--therdColor);
+    &:hover {
+      background-color: var(--mainColor);
+      color: var(--therdColor);
+    }
+  }
+  button {
+    padding: 0;
+    margin: #{$x / 2}px;
+    font-size: 1.5rem;
+    height: #{140 - $x}px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--therdColor);
+    opacity: 0.8;
+    color: var(--mainColor);
+    transition: 0.5s all;
+    @media (max-width: 470px) {
+      height: #{120 - $x}px;
+    }
+    @media (max-width: 410px) {
+      height: #{80 - $x}px;
+    }
+    @media (max-width: 279px) {
+      height: #{50 - $x}px;
+      font-size: unset;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.swal2-popup.swal2-modal.swal2-show {
+  background-color: var(--therdColor);
+  button {
+    background-color: var(--secondColor);
+  }
+  #swal2-html-container {
+    margin: 0;
+  }
+  #swal2-title {
+    margin-bottom: 15px;
+  }
+  .swal2-input {
+    border: 1px solid var(--mainColor);
+    box-shadow: none;
+    outline: none;
+    width: 95%;
+    margin: 5px 0;
+    &::placeholder {
+      color: #9b9b9b;
+    }
+    &:focus {
+      border: 2px solid var(--secondColor);
+    }
+  }
+}

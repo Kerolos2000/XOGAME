@@ -1,0 +1,234 @@
+:root {
+  --mainColor: #161a27;
+  --secondColor: #2b3252;
+  --therdColor: #d5e3ff;
+  --forthColor: #ff9334;
+  --white: #fff;
+}
+
+::-moz-selection {
+  background-color: var(--white);
+  color: var(--white);
+}
+
+::selection {
+  background-color: var(--white);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--white);
+}
+
+.light {
+  --mainColor: #856542;
+  --secondColor: #4e3b28;
+  --therdColor: #ffeed5;
+}
+
+body {
+  transition: 1s;
+  min-height: 100vh;
+  background-color: var(--mainColor);
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  background: var(--secondColor);
+  padding: 15px;
+}
+#main .dash1,
+#main .dash2,
+#main .dash3 {
+  grid-column: span 3;
+  width: 100%;
+  min-height: 75px;
+  text-align: center;
+  background-color: var(--therdColor);
+  color: var(--secondColor);
+  font-weight: bold;
+  outline: none;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#main .dash1 h3,
+#main .dash1 h2,
+#main .dash2 h3,
+#main .dash2 h2,
+#main .dash3 h3,
+#main .dash3 h2 {
+  margin: 0;
+}
+#main .dash1 h3,
+#main .dash2 h3,
+#main .dash3 h3 {
+  font-size: 1.4rem;
+}
+#main .dash1 h3 span,
+#main .dash2 h3 span,
+#main .dash3 h3 span {
+  color: var(--forthColor);
+}
+@media (max-width: 450px) {
+  #main .dash1 h3,
+  #main .dash2 h3,
+  #main .dash3 h3 {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 410px) {
+  #main .dash1 h3,
+  #main .dash2 h3,
+  #main .dash3 h3 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 279px) {
+  #main .dash1 h3,
+  #main .dash2 h3,
+  #main .dash3 h3 {
+    font-size: 0.8rem;
+  }
+}
+#main .dash1 span,
+#main .dash2 span,
+#main .dash3 span {
+  color: var(--secondColor);
+  font-size: 1.5rem;
+}
+@media (max-width: 450px) {
+  #main .dash1 span,
+  #main .dash2 span,
+  #main .dash3 span {
+    font-size: 1.2rem;
+  }
+}
+#main .dash3 {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+@media (max-width: 450px) {
+  #main .dash3 {
+    padding: 10px;
+  }
+}
+#main .dash3 p {
+  cursor: pointer;
+  margin: 2px 0;
+  height: auto;
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color: var(--mainColor);
+  color: var(--therdColor);
+  border: 2px solid var(--mainColor);
+  transition: 0.5s;
+}
+#main .dash3 p:hover {
+  background-color: var(--therdColor);
+  color: var(--mainColor);
+  border: 2px solid var(--mainColor);
+}
+@media (max-width: 470px) {
+  #main {
+    grid-template-columns: repeat(3, 120px);
+  }
+}
+@media (max-width: 410px) {
+  #main {
+    grid-template-columns: repeat(3, 80px);
+  }
+}
+@media (max-width: 279px) {
+  #main {
+    grid-template-columns: repeat(3, 50px);
+  }
+}
+#main .winner {
+  background-color: var(--mainColor);
+  color: var(--therdColor);
+}
+#main .winner:hover {
+  background-color: var(--mainColor);
+  color: var(--therdColor);
+}
+#main button {
+  padding: 0;
+  margin: 1px;
+  font-size: 1.5rem;
+  height: 138px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--therdColor);
+  opacity: 0.8;
+  color: var(--mainColor);
+  transition: 0.5s all;
+}
+@media (max-width: 470px) {
+  #main button {
+    height: 118px;
+  }
+}
+@media (max-width: 410px) {
+  #main button {
+    height: 78px;
+  }
+}
+@media (max-width: 279px) {
+  #main button {
+    height: 48px;
+    font-size: unset;
+  }
+}
+#main button:hover {
+  opacity: 1;
+}
+
+.swal2-popup.swal2-modal.swal2-show {
+  background-color: var(--therdColor);
+}
+.swal2-popup.swal2-modal.swal2-show button {
+  background-color: var(--secondColor);
+}
+.swal2-popup.swal2-modal.swal2-show #swal2-html-container {
+  margin: 0;
+}
+.swal2-popup.swal2-modal.swal2-show #swal2-title {
+  margin-bottom: 15px;
+}
+.swal2-popup.swal2-modal.swal2-show .swal2-input {
+  border: 1px solid var(--mainColor);
+  box-shadow: none;
+  outline: none;
+  width: 95%;
+  margin: 5px 0;
+}
+.swal2-popup.swal2-modal.swal2-show .swal2-input::-moz-placeholder {
+  color: #9b9b9b;
+}
+.swal2-popup.swal2-modal.swal2-show .swal2-input::placeholder {
+  color: #9b9b9b;
+}
+.swal2-popup.swal2-modal.swal2-show .swal2-input:focus {
+  border: 2px solid var(--secondColor);
+}/*# sourceMappingURL=main.css.map */
